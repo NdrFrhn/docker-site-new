@@ -1,0 +1,15 @@
+@import "modules/archive";
+@import "modules/footer";
+@import "modules/main";
+@import "base/base";
+@import "modules/header";
+@import "modules/page";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+body {
+  margin: 0;
+  background: url("../img/bg-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

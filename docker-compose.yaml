@@ -1,0 +1,49 @@
+services:
+  mysql_db:
+    # We use a mariadb image which supports both amd64 & arm64 architecture
+    # image: mariadb:10.6.4-focal
+    # If you really want to use MySQL, uncomment the following line
+    container_name: mysql_container_2
+    image: mysql:8.0.27
+    command: '--default-authentication-plugin=mysql_native_password'
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=yoga
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+    expose:
+      - 3306
+      - 33060
+
+  wordpress:
+    depends_on:
+      - mysql_db
+    image: wordpress:latest
+    volumes:
+     - "./:/var/www/html"
+    ports:
+      - 8005:80
+    environment:
+      - WORDPRESS_DB_HOST=mysql_db:3306
+      - WORDPRESS_DB_USER=admin
+      - WORDPRESS_DB_PASSWORD=admin
+      - WORDPRESS_DB_NAME=yoga
+
+  phpmyadmin:
+    container_name: phpmyadmin_container_2
+    depends_on:
+      - mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      PMA_HOST: mysql_db
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8085:80"
+    restart: always
+    volumes:
+      - "./:/var/www/html/phpmyadmin"
+
+volumes:
+  mysql: {}

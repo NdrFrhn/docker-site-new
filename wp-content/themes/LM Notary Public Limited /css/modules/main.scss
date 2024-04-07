@@ -1,0 +1,136 @@
+.banner {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20%;
+  h1 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 600;
+  }
+  button {
+    display: block;
+    width: 300px;
+    height: 50px;
+  }
+  .read-more {
+    color: white;
+    background: #7f030b;
+    border-radius: 5px;
+  }
+  .get-a-quote {
+    color: white;
+    background: #037f0b;
+    border-radius: 5px;
+  }
+  .read-more:hover {
+    background: #a32b33;
+    border-radius: 5px;
+  }
+  .get-a-quote:hover {
+    background: #3cb444;
+    border-radius: 5px;
+  }
+}
+
+.about-section {
+  height: 70vh;
+  h1 {
+    color: #fff;
+    font-size: 50px;
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+/// SERVICE SECTION
+/// ///////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////////////
+.services {
+  width: 100%;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16%;
+  padding-bottom: 16%;
+
+  h1 {
+    font-size: 60px;
+    font-weight: 600;
+  }
+
+  .boxes-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10vh;      
+    justify-content: space-evenly;     
+    @media screen and (min-width: 992px) { //from 992px included on, the following is active. Responsive menu coding for mobile first.
+      padding-top: 10vh;       
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    .card {
+      padding: 20px 30px;
+      text-align: center;
+      }
+      h4 {
+        font-size: 30px;
+      }
+      p {
+        text-align: justify;
+      }
+      .fa {
+        margin: auto;
+        padding: 10px;
+      }
+      @media screen and (max-width: 992px) { //from 992px included on, the following is active. Responsive menu coding for mobile first.
+      .card-mbl {
+        width:100%;
+        height:auto;
+      }
+    }
+  }
+}
+
+.about-section {
+  padding: 40px 0;
+  background-color: #292525;
+
+  h2 {
+    color: #fff;
+    text-align: center;
+  }
+
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: solid 1px #fff;
+    color: #fff;
+  }
+
+  .about-d1 {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 20px;
+    border: solid 1px #fff;
+  }
+
+  .about-d1 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .about-text {
+    flex: 1;
+    max-width: 50%;
+    padding: 0 20px;
+    border: solid 1px #fff;
+    color: #fff;
+  }
+  
+}
+
+
